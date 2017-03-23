@@ -6,4 +6,5 @@ import { QueryHandler, DefaultQueryHandler } from "vulcain-corejs";
 // -----------------------------------------------------------
 @QueryHandler({ scope: "?", schema: "CarePlan" })
 export class CarePlanQueryHandler extends DefaultQueryHandler<CarePlan> {
+    
 }
