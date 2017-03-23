@@ -1,10 +1,9 @@
-import { Customer } from "../models/models";
+import { CarePlan } from "../models/models";
 import { QueryHandler, DefaultQueryHandler } from "vulcain-corejs";
 
 // -----------------------------------------------------------
 // Defaut query handlers (get/search)
 // -----------------------------------------------------------
-@QueryHandler({ scope: "?", schema: "Customer" })
-export class CustomerQueryHandler extends DefaultQueryHandler<Customer> {
+@QueryHandler({ scope: "?", schema: "CarePlan" })
+export class CarePlanQueryHandler extends DefaultQueryHandler<CarePlan> {
 }
-
