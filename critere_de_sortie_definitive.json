@@ -1,0 +1,60 @@
+{
+    "id": "critere_de_sortie_definitive",
+    "description": "9 circonstances demandant la sortie immédiate et définitive du joueur sans nécessité d’évaluation initiale particulière",
+    "steps": [
+        {
+            "id": "critere_de_sortie_definitive_step1",
+            "test": {
+                "id": "quizz_perte_de_connaissance_test1",
+                "delay": -1,
+                "actions": [
+                    {
+                        "id": "quizz_perte_de_connaissance_test1",
+                        "label": "Evaluation de la perte de connaissance",
+                        "type": "question",
+                        "kind": "multiselect",
+                        "options": [
+                            "Aucune réponse aux ordres simples",
+                            "Yeux fermés",
+                            "Aucun mouvement (en dehors de mouvements reflexes)"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "id": "critere_de_sortie_definitive_step2",
+            "test": {
+                "id": "quizz_suspicion_de_perte_de_connaissance_test2",
+                "delay": -1,
+                "actions": [
+                    {
+                        "id": "quizz_suspicion_de_perte_de_connaissance_test1",
+                        "label": "Suspicion de perte de connaissance",
+                        "type": "question",
+                        "kind": "multiselect",
+                        "options": [
+                            "Hypotonie cervicale observée juste après l’impact",
+                            "Le joueur est immobile au sol, les yeux fermés à l’arrivée des premiers secours",
+                            "La perte de connaissance est apportée par les remiers témoins (joueurs, arbitres, kiné)"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "id": "critere_de_sortie_definitive_step3",
+            "test": {
+                "id": "game_detection_d_ataxie_test3",
+                "delay": 20,
+                "actions": [
+                    {
+                        "id": "game_detection_d_ataxie_test3",
+                        "label": "Evaluation de la coordination fine des mouvements volontaires",
+                        "type": "game"
+                    }
+                ]
+            }
+        }
+    ]
+}

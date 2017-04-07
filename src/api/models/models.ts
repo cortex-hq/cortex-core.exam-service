@@ -11,6 +11,9 @@ export class Action {
 
     @Property({ type: "string", required: true })
     label: string;
+
+    @Property({ type: "boolean", required: false, defaultValue: 'false' })
+    required: boolean = false;
 }
 
 @Model()
@@ -26,10 +29,16 @@ export class Interaction {
 @Model({ extends: 'Action' })
 export class Question extends Action {
     @Property({ type: "string", required: true })
-    type: string;
-    @Property({ type: "boolean", required: false, defaultValue: 'false' })
-    required: boolean = false;
+    kind: string;
+    @Property({ type: "any" })
+    options: any|Array<string>
 }
+
+// @Model({ extends: 'Question' })
+// export class ChoiceQuestion extends Question {
+//     @Property({ type: "arrayOfItem", items: "string" })
+//     options: object
+// }
 
 @Model({ extends: 'Interaction' })
 export class Quizz extends Interaction {
@@ -90,6 +99,8 @@ export class AddStepView {
 export class CarePlan {
     @Property({ type: "string", required: true, unique: true, isKey: true })
     id: string;
+    @Property({ type: "string", required: true })
+    description: string;
     // @Property({ type: "date-iso8601", required: true })
     // startDate: string;
     // @Property({ type: "date-iso8601", required: true, })
